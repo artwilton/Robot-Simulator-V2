@@ -9,12 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
   // determine direction of arrow key
   // add direction to <ul id="moves-container"> as <li> elements
 
-  
-  const leftText = document.createTextNode("Left")
-  const rightText = document.createTextNode("Right")
-  const upText = document.createTextNode("Up")
-  const downText = document.createTextNode("Down")
-
   document.body.addEventListener('keydown', function(event) {
     const list = document.createElement("li")
     switch (event.key) {
