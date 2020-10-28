@@ -9,25 +9,33 @@ document.addEventListener("DOMContentLoaded", function() {
   // determine direction of arrow key
   // add direction to <ul id="moves-container"> as <li> elements
 
+  const movesList = document.getElementById("moves-container")
+  const moveButton = document.getElementById("move-button")
+
   document.body.addEventListener('keydown', function(event) {
     const list = document.createElement("li")
     switch (event.key) {
       case "ArrowLeft":
         list.textContent = "Left"
-        document.getElementById("moves-container").prepend(list)
+        movesList.append(list)
         break;
       case "ArrowRight":
         list.textContent = "Right"
-        document.getElementById("moves-container").prepend(list)
+        movesList.append(list)
         break;
       case "ArrowUp":
         list.textContent ="Up"
-        document.getElementById("moves-container").prepend(list)
+        movesList.append(list)
         break;
       case "ArrowDown":
         list.textContent ="Down"
-        document.getElementById("moves-container").prepend(list)
+        movesList.append(list)
         break;
     }
+  })
+
+  moveButton.addEventListener('click', function(event) {
+    movesList.children[0].remove()
+
   })
 })
