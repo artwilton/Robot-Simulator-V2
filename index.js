@@ -15,33 +15,24 @@ document.addEventListener("DOMContentLoaded", function() {
   const upText = document.createTextNode("Up")
   const downText = document.createTextNode("Down")
 
-  let list = document.createElement("LI")
-
   document.body.addEventListener('keydown', function(event) {
+    const list = document.createElement("li")
     switch (event.key) {
       case "ArrowLeft":
-        list = document.createElement("LI")
-        list.appendChild(leftText)
-        console.log(list)
-        document.getElementById("moves-container").appendChild(list)
+        list.textContent = "Left"
+        document.getElementById("moves-container").prepend(list)
         break;
       case "ArrowRight":
-        list = document.createElement("LI")
-        list.appendChild(rightText)
-        console.log(list)
-        document.getElementById("moves-container").appendChild(list)
+        list.textContent = "Right"
+        document.getElementById("moves-container").prepend(list)
         break;
       case "ArrowUp":
-        list = document.createElement("LI")
-        list.appendChild(upText)
-        console.log(list)
-        document.getElementById("moves-container").appendChild(list)
+        list.textContent ="Up"
+        document.getElementById("moves-container").prepend(list)
         break;
       case "ArrowDown":
-        list = document.createElement("LI")
-        list.appendChild(downText)
-        console.log(list)
-        document.getElementById("moves-container").appendChild(list)
+        list.textContent ="Down"
+        document.getElementById("moves-container").prepend(list)
         break;
     }
   })
